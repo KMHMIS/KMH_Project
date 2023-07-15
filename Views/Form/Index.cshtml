@@ -1,0 +1,147 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <style>
+
+        .btn1 {
+            float: right;
+        }
+
+        @@media (max-width:767px) {
+            .btn1 {
+                margin-left: 0px;
+                justify-content: right;
+                float: right
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="content">
+
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>Form</h2>
+            </div>
+            <!-- Input -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="divInput" style="display:none">
+
+
+
+                    <div class="card">
+                        <div class="col-md-12">
+                            <button type="button" id="btnClose" class="btn btn-danger btn1"><i class="material-icons">close</i></button>
+                        </div>
+                        <div class="body">
+
+                            <div class="row clearfix">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="FormName" class="form-control" placeholder="Form Name" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="url" class="form-control" placeholder="URL" required />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+
+                                            <select id="Form" class="form-control mt-3">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                          
+
+
+                                        </div>
+                                        <br />
+                                        <button type="button" id="btnUpdate" class="btn btn-success  btn1" style="display:none"><i class="material-icons">update</i></button>
+                                        <button type="button" id="btnSave" class="btn btn-success btn1"><i class="material-icons">save</i></button>
+                                        <button type="button" id="btnClear" class="btn btn1"><i class="material-icons">brush</i></button>
+
+
+                                        <div class="button-demo" style="margin-left:1020px">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #END# Input -->
+                    <!-- Textarea -->
+                </div>
+            </div>
+
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <button type="button" id="btnAdd" class="btn btn-primary"><i class="material-icons">person_add</i></button>
+                            <ul class="header-dropdown m-r--5">
+
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table id="tblform" class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Form Name</th>
+                                            <th>URL</th>
+                                            <th>Parent</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Basic Examples -->
+
+        </div>
+
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="~/vendor/js/form.js"></script>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <style>
+
+        .btn1 {
+            float: right;
+        }
+
+        @@media (max-width:767px) {
+            .btn1 {
+                margin-left: 0px;
+                justify-content: right;
+                float: right
+            }
+        }
+    </style>
+    <link href="~/plugins/multi-select/css/multi-select.css" rel="stylesheet" />
+   @* 
+    
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />*@
+</head>
+
+<body>
+
+    <section class="content">
+
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>Assign Form To Role</h2>
+            </div>
+            <!-- Input -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="divInput" style="display:none">
+                    <div class="card">
+                        <div class="col-md-12">
+                            <button type="button" id="btnClose" class="btn btn-danger btn1"><i class="material-icons">close</i></button>
+                        </div>
+                        <div class="body">
+
+                            <div class="row clearfix">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <select id="form" class="form-control mt-3">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <select id="role" class="form-control mt-3">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-line">
+
+                                            <select id="action" class="form-control mt-3" multiple>
+                                            </select>
+                                           @* <select id="action" class="from-control" multiple></select>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Advanced Select -->
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="card">
+                                            <div class="header">
+                                                <h2>
+                                                    ADVANCED SELECT
+                                                    <small>Taken from <a href="https://silviomoreto.github.io/bootstrap-select/" target="_blank">silviomoreto.github.io/bootstrap-select</a></small>
+                                                </h2>
+                                                <ul class="header-dropdown m-r--5">
+                                                    <li class="dropdown">
+                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="material-icons">more_vert</i>
+                                                        </a>
+                                                        <ul class="dropdown-menu pull-right">
+                                                            <li><a href="javascript:void(0);">Action</a></li>
+                                                            <li><a href="javascript:void(0);">Another action</a></li>
+                                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="body">
+                                                <div class="row clearfix">
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            <b>Basic</b>
+                                                        </p>
+                                                        <select class="form-control show-tick">
+                                                            <option>Mustard</option>
+                                                            <option>Ketchup</option>
+                                                            <option>Relish</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            <b>With OptGroups</b>
+                                                        </p>
+                                                        <select class="form-control show-tick">
+                                                            <optgroup label="Picnic">
+                                                                <option>Mustard</option>
+                                                                <option>Ketchup</option>
+                                                                <option>Relish</option>
+                                                            </optgroup>
+                                                            <optgroup label="Camping">
+                                                                <option>Tent</option>
+                                                                <option>Flashlight</option>
+                                                                <option>Toilet Paper</option>
+                                                            </optgroup>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            <b>Multiple Select</b>
+                                                        </p>
+                                                        <select class="form-control show-tick" multiple>
+                                                            <option>Mustard</option>
+                                                            <option>Ketchup</option>
+                                                            <option>Relish</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            <b>With Search Bar</b>
+                                                        </p>
+                                                        <select class="form-control show-tick" data-live-search="true">
+                                                            <option>Hot Dog, Fries and a Soda</option>
+                                                            <option>Burger, Shake and a Smile</option>
+                                                            <option>Sugar, Spice and all things nice</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row clearfix">
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            <b>Max Selection Limit: 2</b>
+                                                        </p>
+                                                        <select class="form-control show-tick" multiple>
+                                                            <optgroup label="Condiments" data-max-options="2">
+                                                                <option>Mustard</option>
+                                                                <option>Ketchup</option>
+                                                                <option>Relish</option>
+                                                            </optgroup>
+                                                            <optgroup label="Breads" data-max-options="2">
+                                                                <option>Plain</option>
+                                                                <option>Steamed</option>
+                                                                <option>Toasted</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            <b>Display Count</b>
+                                                        </p>
+                                                        <select class="form-control show-tick" multiple data-selected-text-format="count">
+                                                            <option>Mustard</option>
+                                                            <option>Ketchup</option>
+                                                            <option>Relish</option>
+                                                            <option>Onions</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            <b>With SubText</b>
+                                                        </p>
+                                                        <select class="form-control show-tick" data-show-subtext="true">
+                                                            <option data-subtext="French's">Mustard</option>
+                                                            <option data-subtext="Heinz">Ketchup</option>
+                                                            <option data-subtext="Sweet">Relish</option>
+                                                            <option data-subtext="Miracle Whip">Mayonnaise</option>
+                                                            <option data-divider="true"></option>
+                                                            <option data-subtext="Honey">Barbecue Sauce</option>
+                                                            <option data-subtext="Ranch">Salad Dressing</option>
+                                                            <option data-subtext="Sweet &amp; Spicy">Tabasco</option>
+                                                            <option data-subtext="Chunky">Salsa</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p>
+                                                            <b>Disabled Option</b>
+                                                        </p>
+                                                        <select class="form-control show-tick">
+                                                            <option>Mustard</option>
+                                                            <option disabled>Ketchup</option>
+                                                            <option>Relish</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- #END# Advanced Select -->
+
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                       
+                                        </div>
+                                        <br />
+                                        <button type="button" id="btnUpdate" class="btn btn-success  btn1" style="display:none"><i class="material-icons">update</i></button>
+                                        <button type="button" id="btnSave" class="btn btn-success btn1"><i class="material-icons">save</i></button>
+                                        <button type="button" id="btnClear" class="btn btn1"><i class="material-icons">brush</i></button>
+
+
+                                        <div class="button-demo" style="margin-left:1020px">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #END# Input -->
+                    <!-- Textarea -->
+                </div>
+            </div>
+
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <button type="button" id="btnAdd" class="btn btn-primary"><i class="material-icons">person_add</i></button>
+                            <ul class="header-dropdown m-r--5">
+
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table id="tblFormToRole" class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Form Name</th>
+                                            <th>Role Name</th>
+                                            <th>Action Name</th>
+                                            <th>Action</th>
+                                            
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Basic Examples -->
+
+        </div>
+
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="~/vendor/js/assignformtorole.js"></script>
+    <!-- Multi Select Plugin Js -->
+  @*  <script src="~/plugins/multi-select/js/jquery.multi-select.js"></script>
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>*@
+    
+</body>
+</html>
