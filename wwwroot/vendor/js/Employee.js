@@ -67,6 +67,7 @@ function onSuccessGetDeparment(data, status) {
 
 
     $('#Deparment').empty();
+    $("#Deparment").append("<option value='" + 0 + "'>--Select Department--</option>").show();
     $.each(data.data, function (i, item) {
         $("#Deparment").append("<option value='" + item.DeparmentID + "'>" + item.DeparmentName + "</option>").show();
     });
@@ -99,6 +100,8 @@ function onSuccessGetDesignation(data, status) {
 
 
     $('#Designation').empty();
+    $("#Designation").append("<option value='" + 0 + "'>--Select Designation--</option>").show();
+
     $.each(data.data, function (i, item) {
         $("#Designation").append("<option value='" + item.DesignationID + "'>" + item.DesignationName + "</option>").show();
     });

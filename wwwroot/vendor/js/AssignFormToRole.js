@@ -67,6 +67,7 @@ function getForm() {
 function onSuccessGetForm(data, status) {
 
     $('#form').empty();
+    $("#form").append("<option value='" + 0 + "'>--Select Form--</option>").show();
     $.each(data.data, function (i, item) {
         $("#form").append("<option value='" + item.FormID + "'>" + item.FormName + "</option>").show();
     });
@@ -95,6 +96,7 @@ function onSuccessGetRole(data, status) {
 
 
     $('#role').empty();
+    $("#role").append("<option value='" + 0 + "'>--Select Role--</option>").show();
     $.each(data.data, function (i, item) {
         $("#role").append("<option value='" + item.RoleID + "'>" + item.RoleName + "</option>").show();
     });
@@ -154,8 +156,8 @@ function getTable()
 
         },
         "columns": [
-            { "data": "FormName", "autoWidth": true },
             { "data": "RoleName", "autoWidth": true },
+            { "data": "FormName", "autoWidth": true },
             { "data": "ActionName", "autoWidth": true },
            
             

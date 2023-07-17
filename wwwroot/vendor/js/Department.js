@@ -67,6 +67,7 @@ function onSuccessGetDeparment(data, status) {
 
 
     $('#department').empty();
+    $("#department").append("<option value='" + 0 + "'>--Select Parent--</option>").show();
     $.each(data.data, function (i, item) {
         $("#department").append("<option value='" + item.DeparmentID + "'>" + item.DeparmentName + "</option>").show();
     });

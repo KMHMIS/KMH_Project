@@ -68,6 +68,8 @@ function onSuccessGetEmployee(data, status) {
 
 
     $('#Employee').empty();
+    $("#Employee").append("<option value='" + 0 + "'>--Select Employee Name--</option>").show();
+
     $.each(data.data, function (i, item) {
         $("#Employee").append("<option value='" + item.EmployeeID + "'>" + item.EmployeeName + "</option>").show();
     });
