@@ -129,13 +129,10 @@ function onSuccessGetAction(data, status) {
 
 
     $('#action').empty();
+    $("#action").append("<option value='" + 0 + "'>--Select Action--</option>").show();
     $.each(data.data, function (i, item) {
         $("#action").append("<option value='" + item.ActionID + "'>" + item.ActionName + "</option>").show();
     });
-    /* console.log(data);*/
-
-
-
 }
 
 //Get Table 
@@ -252,7 +249,7 @@ $('#btnSave').on('click', function () {
     var RoleName = $('#role').val();
     var Action = $('#action').val();
     var EmployeeId = employeeId;
-
+   
     if (FormName == "") {
         $('#form').addClass('error');
         $('#error_name').html('Please Fill Textbox');
@@ -266,7 +263,7 @@ $('#btnSave').on('click', function () {
         action:'insert',
         formID: FormName,
         roleID: RoleName,
-        actionID: Action,
+        actionID: Action.join(",").trim(),
         CreatedBy: EmployeeId
     };
 

@@ -22705,6 +22705,10 @@
       "PackagePath": "staticwebassets\\vendor\\js\\AssignFormToRole.js"
     },
     {
+      "Id": "D:\\KMH Projects\\KMH_Project\\KMH_Project\\KMH_Project\\wwwroot\\vendor\\js\\AssignRoleToUser.js",
+      "PackagePath": "staticwebassets\\vendor\\js\\AssignRoleToUser.js"
+    },
+    {
       "Id": "D:\\KMH Projects\\KMH_Project\\KMH_Project\\KMH_Project\\wwwroot\\vendor\\js\\Dashboard.js",
       "PackagePath": "staticwebassets\\vendor\\js\\Dashboard.js"
     },
