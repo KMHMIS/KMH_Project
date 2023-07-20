@@ -17,6 +17,7 @@ $(document).ready(function () {
     $('#LoginUser').html(username);
     $('#email').html(email);
     getEmployee();
+    getRole();
     clear();
     getTableUser();
     $('#error_message').html('');
@@ -71,13 +72,53 @@ function onSuccessGetEmployee(data, status) {
     $("#Employee").append("<option value='" + 0 + "'>--Select Employee Name--</option>").show();
 
     $.each(data.data, function (i, item) {
+        /*var mergedName = item.FirstName + " - " + item.LastName;*/
         $("#Employee").append("<option value='" + item.EmployeeID + "'>" + item.EmployeeName + "</option>").show();
     });
    /* console.log(data);*/
 
+}
 
+//Fill DropDown Role
+function getRole() {
+
+    $.ajax({
+        type: "GET",
+        url: apiUrl + 'Roles/GetTableData?action=gettabledata',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(),
+        dataType: "json",
+        /*async: false,*/
+        success: onSuccessGetRole,
+        error: function (error) {
+            console.log(error.responseText);
+
+        },
+
+    });
 
 }
+function onSuccessGetRole(data, status) {
+
+
+    $('#RoleID').empty();
+    $("#RoleID").append("<option value='" + 0 + "'>--Select Role--</option>").show();
+    $.each(data.data, function (i, item) {
+        $("#RoleID").append("<option value='" + item.RoleID + "'>" + item.RoleName + "</option>").show();
+    });
+
+}
+
+//On change event
+$("#Employee").change(function () {
+    var selectedOption = $(this).find('option:selected').text();
+    //var GetValue = $("#Employee").attr();
+    var names = selectedOption.split(" - ");
+   // $("#firstName").val(selectedOption);
+    $('#firstName').val(names[0]);
+    $('#lastName').val(names[1]);
+});
+
 
 //Get User Table 
 function getTableUser()
@@ -225,6 +266,7 @@ $('#btnSave').on('click', function () {
     var UserName = $('#userName').val();
     var Password = $('#password').val();
     var Reason = $('#reason').val();
+    var RoleID = $('#RoleID').val();
     var EmployeeId = employeeId;
     
     if (FirstName == "") {
@@ -244,6 +286,7 @@ $('#btnSave').on('click', function () {
         userName: UserName,
         password: Password,
         reason: Reason,
+        RoleID: RoleID,
         CreatedBy: EmployeeId
     };
 
