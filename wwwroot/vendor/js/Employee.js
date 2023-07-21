@@ -105,10 +105,6 @@ function onSuccessGetDesignation(data, status) {
     $.each(data.data, function (i, item) {
         $("#Designation").append("<option value='" + item.DesignationID + "'>" + item.DesignationName + "</option>").show();
     });
-   /* console.log(data);*/
-
-
-
 }
 
 //Get Employee Table 
@@ -148,12 +144,6 @@ function getTableEmployee()
                 }
                 
             }
-            //,
-            //{
-            //    "data": 'Employee', "weight": "50px", "reder": function (data) {
-            //        return '<button type="button" id="' + data + '" class="btn btn-danger btnDelete">Delete</button>'
-            //    }
-            //}
         ]
     });
 }
