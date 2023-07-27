@@ -141,12 +141,13 @@ function getTableUser()
             { "data": "FirstName", "autoWidth": true },
             { "data": "LastName", "autoWidth": true },
             { "data": "UserName", "autoWidth": true },
+            { "data": "RoleName", "autoWidth": true },
             
             {
                 "data": 'UserID', "weight": "50px", "render": function (data) {
                     return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
 
-                }
+            }
 
             }
         ]
@@ -286,7 +287,7 @@ $('#btnSave').on('click', function () {
         userName: UserName,
         password: Password,
         reason: Reason,
-        RoleID: RoleID,
+        RoleID: RoleID.join(",").trim(),
         CreatedBy: EmployeeId
     };
 
@@ -314,6 +315,7 @@ $('#btnSave').on('click', function () {
                     }
                 }).then((result) => {
                     clear();
+                    getTableUser();
 
                 })
              

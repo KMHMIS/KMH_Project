@@ -87,7 +87,7 @@
                                     <div class="form-group">
                                         <div class="form-line">
 
-                                            <select id="RoleID" class="form-control mt-3">
+                                            <select id="RoleID" class="form-control mt-3" multiple>
                                             </select>
                                         </div>
                                     </div>
@@ -105,13 +105,11 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                     
-
-
                                         </div>
                                         <br />
                                         <button type="button" id="btnUpdate" class="btn btn-success  btn1" style="display:none"><i class="material-icons">update</i></button>
-                                        <button type="button" id="btnSave" class="btn btn-success btn1"><i class="material-icons">save</i></button>
+                                        @*<button type="button" id="btnSave" class="btn btn-success btn1"><i class="material-icons">save</i></button>*@
+                                        <div  id="btnSave" ></div>
                                         <button type="button" id="btnClear" class="btn btn1"><i class="material-icons">brush</i></button>
                                         
                                         <div class="button-demo" style="margin-left:1020px">
@@ -149,7 +147,8 @@
                                       <tr>
                                           <th>First Name</th>
                                           <th>Last Name</th>
-                                          <th>User Name</th>
+                                            <th>User Name</th>
+                                            <th>Role Name</th>
                                           <th>Action</th>
                                       </tr>
                                     </thead>
