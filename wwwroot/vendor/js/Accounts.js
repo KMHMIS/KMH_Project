@@ -71,7 +71,8 @@ function onSuccessGetUserForms(data, status) {
     $('#mnu_forms_link').click();
 
     const uniqueFormNames = {};
-
+    var URLFormName = '';
+    console.log(data.data);
     $.each(data.data, function (i, item) {
         // Check if the FormName is not already in the lookup table
         if (!uniqueFormNames[item.FormName]) {
@@ -79,18 +80,27 @@ function onSuccessGetUserForms(data, status) {
             uniqueFormNames[item.FormName] = true;
             
             $("#sub_mnu_forms").append("<li class='sub_forms'><a href='" + item.URL + "'>" + item.FormName + "</a></li>").show();
+            
+            var hashes = window.location.href.slice(window.location.href.indexOf('/') + 1).split('/');
+            URLFormName = hashes[hashes.length - 1].trim();
         }
        
     });
+    //Get current form rights
+    var form_rights = data.data.filter(function (i, key) {
+        return i.FormName.toLowerCase() == URLFormName.toLowerCase();
+    });
+
     // Clear the #btnSave div before adding buttons
     $('#btnSave').empty();
+    $("#btnSave").append('<button type="button" class="btn btn-success btn1" title="Save Record" value="' + item.ActionName + '"><i class="material-icons">save</i></button>');
+  
 
     const uniqueActionNames = {};
 
     $.each(data.data, function (i, item) {
         if (!uniqueActionNames[item.ActionName]) {
             uniqueActionNames[item.ActionName] = true;
-            $("#btnSave").append('<button type="button" class="btn btn-success btn1" title="Save Record" value="' + item.ActionName + '"><i class="material-icons">save</i></button>');
         }
     });
 
