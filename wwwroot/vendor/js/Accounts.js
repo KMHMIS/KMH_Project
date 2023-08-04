@@ -91,21 +91,56 @@ function onSuccessGetUserForms(data, status) {
         return i.FormName.toLowerCase() == URLFormName.toLowerCase();
     });
 
-    // Clear the #btnSave div before adding buttons
+    // Clear the buttons before adding new ones
     $('#btnSave').empty();
-    $("#btnSave").append('<button type="button" class="btn btn-success btn1" title="Save Record" value="' + item.ActionName + '"><i class="material-icons">save</i></button>');
+    $('.btnEdit').empty();
+    $('.btnDelete').empty();
   
 
-    const uniqueActionNames = {};
-
-    $.each(data.data, function (i, item) {
-        if (!uniqueActionNames[item.ActionName]) {
-            uniqueActionNames[item.ActionName] = true;
+    $.each(form_rights, function (i, item) {
+        switch (item.ActionName) {
+            case "Insert":
+                $("#btnSave").append('<button type="button" class="btn btn-success btn1" title="Save Record" value="' + item.ActionName + '"><i class="material-icons">save</i></button>');
+                break;
+            case "Update":
+                $(".btnEdit").append('<button type="button" class="btn btn-primary" title="Updated Record" value="' + item.ActionName + '"><i class="material-icons">edit</i></button>');
+                break;
+            case "Delete":
+                $(".btnDelete").append('<button type="button" class="btn btn-danger" title="Delete Record" value="' + item.ActionName + '"><i class="material-icons">delete</i></button>');
+                break;
+          
+            default:
+                break;
         }
     });
+    //$.each(form_rights, function (i,item) { 
+    //// Clear the #btnSave div before adding buttons
+    //$('#btnSave').empty();
+    //$('.btnEdit').empty();
+    //    $('.btnDelete').empty();
+    //    if (item.ActionName.toLowerCase() == "insert") {
+    //        $("#btnSave").append('<button type="button" class="btn btn-success btn1" title="Save Record" value="' + item.ActionName + '"><i class="material-icons">save</i></button>');
+    //    }
+    //    else if (item.ActionName.toLowerCase() == "update") {
+    //        $(".btnEdit").append('<button type="button" class="btn btn-primary btnEdit" title="Updated Record" value="' + item.ActionName + '"><i class="material-icons">edit</i></button>');
+    //    }
+    //    else if (item.ActionName.toLowerCase() == "delete") {
+    //        $(".btnDelete").append('<button type="button" class="btn btn-danger btnDelete" title="Delete Record" value="' + item.ActionName + '"><i class="material-icons">delete</i></button>');
+
+    //    }
+    
+    //});
+
+    //const uniqueActionNames = {};
+
+    //$.each(data.data, function (i, item) {
+    //    if (!uniqueActionNames[item.ActionName]) {
+    //        uniqueActionNames[item.ActionName] = true;
+    //    }
+    //});
 
     // Show the #btnSave div after adding buttons
-    $('#btnSave').show();
+   // $('#btnSave').show();
 
     //$.each(data.data, function (i, item) {
       //  $("#sub_mnu_forms").append("<li class='sub_forms'><a href = '" + item.URL + "'> " + item.FormName + "</a></li >").show();

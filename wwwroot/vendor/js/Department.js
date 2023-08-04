@@ -17,7 +17,7 @@ $(document).ready(function () {
     $('#email').html(email);
     getDeparment();
 
-    getTableEmployee();
+    getTableDepartment();
     $('#error_message').html('');
 
 });
@@ -79,8 +79,8 @@ function onSuccessGetDeparment(data, status) {
 
 
 
-//Get Employee Table 
-function getTableEmployee()
+//Get Department Table 
+function getTableDepartment()
 {
     $('#tblDepartment').DataTable({
 
@@ -94,6 +94,7 @@ function getTableEmployee()
             "datatype": "json",
         },
         "rowCallback": function (row, data, index) {
+            $(row).attr('data-deparmentid', data.DeparmentID);
 
         },
         "columns": [
@@ -103,8 +104,10 @@ function getTableEmployee()
          
             
             {
-                "data": 'DeparmentID', "weight": "50px" , "render": function (data) {
-                    return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
+                "data": 'DeparmentID', "weight": "50px", "render": function (data) {
+                    return '<div id="' + data + '" class=" btnEdit"></div> <div id="' + data + '" class=" btnDelete"></div>'
+
+                    //return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
                     
                 }
                 
@@ -159,7 +162,7 @@ $(document).on("click", ".btnDelete", function () {
                     const element = document.getElementById(UpdateEmployeeID);
                     element.remove();
                     // $('#btnDynamicFilters' + id).remove();
-                    getTableEmployee();
+                    getTableDepartment();
                 },
                 error: function (error) {
                     console.log(error);
@@ -239,7 +242,7 @@ $('#btnSave').on('click', function () {
                     }
                 }).then((result) => {
                     clear();
-                    getTableEmployee();
+                    getTableDepartment();
                     $("#divInput").hide();
 
                 })
@@ -311,7 +314,7 @@ $('#btnUpdate').on('click', function () {
                     }
                 }).then((result) => {
                     clear();
-                    getTableEmployee();
+                    getTableDepartment();
                     $("#divInput").hide();
                     
                 })

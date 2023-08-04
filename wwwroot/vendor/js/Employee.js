@@ -123,7 +123,7 @@ function getTableEmployee()
             "datatype": "json",
         },
         "rowCallback": function (row, data, index) {
-
+            $(row).attr('data-employeeid', data.EmployeeID);
         },
         "columns": [
             { "data": "FirstName", "autoWidth": true },
@@ -139,7 +139,8 @@ function getTableEmployee()
             
             {
                 "data": 'EmployeeID', "weight": "50px" , "render": function (data) {
-                    return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
+                    return '<div id="' + data + '" class=" btnEdit"></div> <div id="' + data + '" class=" btnDelete"></div>'
+                    //return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
                     
                 }
                 

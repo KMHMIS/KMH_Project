@@ -124,6 +124,7 @@ function getTableRoleToUser()
             "datatype": "json",
         },
         "rowCallback": function (row, data, index) {
+            $(row).attr('data-id', data.ID);
 
         },
         "columns": [
@@ -131,8 +132,9 @@ function getTableRoleToUser()
             { "data": "RoleName", "autoWidth": true },
             
             {
-                "data": 'ID', "weight": "50px" , "render": function (data) {
-                    return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
+                "data": 'ID', "weight": "50px", "render": function (data) {
+                    return '<div id="' + data + '" class=" btnEdit"></div> <div id="' + data + '" class=" btnDelete"></div>'
+                    /*return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'*/
                     
                 }
                 

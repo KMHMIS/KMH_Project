@@ -135,8 +135,10 @@ function getTableUser()
             "datatype": "json",
         },
         "rowCallback": function (row, data, index) {
-
+            // Store the UserID as a data attribute in the row
+            $(row).attr('data-userid', data.UserID);
         },
+        
         "columns": [
             { "data": "FirstName", "autoWidth": true },
             { "data": "LastName", "autoWidth": true },
@@ -145,7 +147,8 @@ function getTableUser()
             
             {
                 "data": 'UserID', "weight": "50px", "render": function (data) {
-                    return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
+                    return '<div id="' + data + '" class=" btnEdit"></div> <div id="' + data + '" class=" btnDelete"></div>'
+                    //return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
 
             }
 

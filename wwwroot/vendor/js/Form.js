@@ -16,7 +16,7 @@ $(document).ready(function () {
     $('#LoginUser').html(username);
     $('#email').html(email);
     getForm();
-    getTableEmployee();
+    getTableForm();
     $('#error_message').html('');
 
 });
@@ -43,7 +43,7 @@ function GetSession() {
     });
 }
 
-//Fill DropDown Deparment
+//Fill DropDown Form
 function getForm() {
 
     $.ajax({
@@ -78,8 +78,8 @@ function onSuccessGetForm(data, status) {
 }
 
 
-//Get Employee Table 
-function getTableEmployee()
+//Get Form Table 
+function getTableForm()
 {
   
     $('#tblform').DataTable({
@@ -94,7 +94,7 @@ function getTableEmployee()
             "datatype": "json",
         },
         "rowCallback": function (row, data, index) {
-
+            $(row).attr('data-formid', data.FormID);
         },
         "columns": [
             { "data": "FormName", "autoWidth": true },
@@ -102,8 +102,9 @@ function getTableEmployee()
             { "data": "ParentID", "autoWidth": true },
             
             {
-                "data": 'FormID', "weight": "50px" , "render": function (data) {
-                    return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
+                "data": 'FormID', "weight": "50px", "render": function (data) {
+                    return '<div id="' + data + '" class=" btnEdit"></div> <div id="' + data + '" class=" btnDelete"></div>'
+                    //return '<button type="button" id="' + data + '" class="btn btn-primary btnEdit"><i class="material-icons">edit</i></button> <button type="button" id="' + data + '" class="btn btn-danger btnDelete"><i class="material-icons">delete</i></button>'
                     
                 }
                 
@@ -156,7 +157,7 @@ $(document).on("click", ".btnDelete", function () {
                     const element = document.getElementById(UpdateEmployeeID);
                     element.remove();
                     // $('#btnDynamicFilters' + id).remove();
-                    getTableEmployee();
+                    getTableForm();
                 },
                 error: function (error) {
                     console.log(error);
@@ -234,7 +235,7 @@ $('#btnSave').on('click', function () {
                     }
                 }).then((result) => {
                     clear();
-                    getTableEmployee();
+                    getTableForm();
                     $("#divInput").hide();
 
                 })
@@ -304,7 +305,7 @@ $('#btnUpdate').on('click', function () {
                     }
                 }).then((result) => {
                     clear();
-                    getTableEmployee();
+                    getTableForm();
                     $("#divInput").hide();
                     
                 })
