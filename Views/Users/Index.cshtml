@@ -20,6 +20,8 @@
             }
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 </head>
 
 <body>
@@ -31,7 +33,7 @@
                 <h2>Users</h2>
             </div>
             <!-- Input -->
-            <div class="row clearfix">
+            <div id="inputfiled" class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="divInput" style="display:none">
                     <div class="card">
                         <div class="col-md-12">
@@ -45,7 +47,17 @@
                                     <div class="form-group">
                                         <div class="form-line">
 
-                                            <select id="Employee" class="form-control mt-3">
+                                            <select id="Employee" class="form-control mt-3" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <h2 class="card-inside-title">Department Name</h2>
+                                    <div class="form-group">
+                                        <div class="form-line">
+
+                                            <select id="Department" class="form-control mt-3" required>
                                             </select>
                                         </div>
                                     </div>
@@ -54,7 +66,7 @@
                                     <h2 class="card-inside-title">First Name</h2>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" id="firstName" class="form-control" placeholder="First Name" required />
+                                            <input type="text" id="firstName" class="form-control" placeholder="First Name"  />
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +74,7 @@
                                     <h2 class="card-inside-title">Last Name</h2>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" id="lastName" class="form-control" placeholder="Last Name" required />
+                                            <input type="text" id="lastName" class="form-control" placeholder="Last Name"  />
                                         </div>
                                     </div>
                                 </div>
@@ -169,10 +181,24 @@
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-    
+   @* <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>*@
+ 
+
     <script src="~/vendor/js/user.js"></script>
     <script src="~/vendor/js/accounts.js"></script>
-
+    <script>
+        $(document).ready(function () {
+            $("#divInput").validate({
+                rules: {
+                    userName: "required"
+                },
+                messages: {
+                    userName: "Please enter a username"
+                }
+            });
+        });
+    </script>
 </body>
 </html>

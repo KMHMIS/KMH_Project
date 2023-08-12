@@ -553,6 +553,15 @@
       "FontAwesome/4.7.0": {
         "type": "package"
       },
+      "jQuery/3.7.0": {
+        "type": "package"
+      },
+      "jQuery.Validation/1.19.5": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.4.4"
+        }
+      },
       "log4net/2.0.12": {
         "type": "package",
         "dependencies": {
@@ -2776,6 +2785,43 @@
         "fontawesome.4.7.0.nupkg.sha512",
         "fontawesome.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "jQuery/3.7.0": {
+      "sha512": "Ao474k6pawdNMzmcObA8GtsqUg9vAMHhDsDEs5TZEc4nTy2vtv8wsBI2c4OyR1OEyNUJG3O2AvGZZlXmRLpoZg==",
+      "type": "package",
+      "path": "jquery/3.7.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-3.7.0-vsdoc.js",
+        "Content/Scripts/jquery-3.7.0.js",
+        "Content/Scripts/jquery-3.7.0.min.js",
+        "Content/Scripts/jquery-3.7.0.min.map",
+        "Content/Scripts/jquery-3.7.0.slim.js",
+        "Content/Scripts/jquery-3.7.0.slim.min.js",
+        "Content/Scripts/jquery-3.7.0.slim.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-3.7.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.3.7.0.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "jQuery.Validation/1.19.5": {
+      "sha512": "lBHoaszLpKYxiVCWwIoxdqSCrlqnW9jeVMinMQ0uNMFcl3rmY8XyeaerfGLRbkVRUzh/fM3APaKepEezrR5AcA==",
+      "type": "package",
+      "path": "jquery.validation/1.19.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery.validate-vsdoc.js",
+        "Content/Scripts/jquery.validate.js",
+        "Content/Scripts/jquery.validate.min.js",
+        "jquery.validation.1.19.5.nupkg.sha512",
+        "jquery.validation.nuspec"
       ]
     },
     "log4net/2.0.12": {
@@ -6863,7 +6909,9 @@
       "FontAwesome >= 4.7.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.16",
       "Microsoft.EntityFrameworkCore >= 2.0.1",
-      "Newtonsoft.Json >= 13.0.3"
+      "Newtonsoft.Json >= 13.0.3",
+      "jQuery >= 3.7.0",
+      "jQuery.Validation >= 1.19.5"
     ]
   },
   "packageFolders": {
@@ -6950,6 +6998,14 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "jQuery": {
+            "target": "Package",
+            "version": "[3.7.0, )"
+          },
+          "jQuery.Validation": {
+            "target": "Package",
+            "version": "[1.19.5, )"
           }
         },
         "imports": [

@@ -33,6 +33,8 @@
     <PackageReference Include="CrystalReports.Web" Version="13.0.4003" />
     <PackageReference Include="FluentAssertions" Version="6.11.0" />
     <PackageReference Include="FontAwesome" Version="4.7.0" />
+    <PackageReference Include="jQuery" Version="3.7.0" />
+    <PackageReference Include="jQuery.Validation" Version="1.19.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

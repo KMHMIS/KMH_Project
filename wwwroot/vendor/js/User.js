@@ -17,13 +17,27 @@ $(document).ready(function () {
     $('#LoginUser').html(username);
     $('#email').html(email);
     getEmployee();
+    getDepartment();
     getRole();
     clear();
     getTableUser();
     $('#error_message').html('');
-
+ 
 });
 
+// Get Validate
+//function GetValidate() {
+//    $('#inputfiled').validate({
+//        rules: {
+//            firstName: { required: true },
+//            lastName: { required: true }
+//        },
+//        messages: {
+//            firstName: "Please enter your first Name",
+//            lastName: "Please enter your last Name"
+//        }
+//    });
+//}
 //Get Session
 function GetSession() {
     $.ajax({
@@ -78,6 +92,41 @@ function onSuccessGetEmployee(data, status) {
    /* console.log(data);*/
 
 }
+
+//Fill DropDown Department
+function getDepartment() {
+
+    $.ajax({
+        type: "GET",
+        url: apiUrl + 'Deparment/GetDeparmentByActive?action=GetDeparmentByActive',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(),
+        dataType: "json",
+        /*async: false,*/
+        success: onSuccessGetDepartment,
+        error: function (error) {
+            console.log(error.responseText);
+
+        },
+
+    });
+
+}
+function onSuccessGetDepartment(data, status) {
+
+
+    $('#Department').empty();
+    $("#Department").append("<option value='" + 0 + "'>--Select Department--</option>").show();
+    $.each(data.data, function (i, item) {
+        $("#Department").append("<option value='" + item.DeparmentID + "'>" + item.DeparmentName + "</option>").show();
+    });
+    /* console.log(data);*/
+
+
+
+}
+
+
 
 //Fill DropDown Role
 function getRole() {
@@ -251,7 +300,7 @@ function clear() {
     
     $('#error_message').html('');
     getEmployee();
-    
+    getDepartment();
 }
 
 //Click Clear Button
@@ -265,6 +314,7 @@ $('#btnSave').on('click', function () {
 
     debugger;
     var Employee = $('#Employee').val();
+    var Department = $('#Department').val();
     var FirstName = $('#firstName').val();
     var LastName = $('#lastName').val();
     var UserName = $('#userName').val();
@@ -272,7 +322,7 @@ $('#btnSave').on('click', function () {
     var Reason = $('#reason').val();
     var RoleID = $('#RoleID').val();
     var EmployeeId = employeeId;
-    
+   // GetValidate();
     if (FirstName == "") {
         $('#firstName').addClass('error');
         $('#error_name').html('Please Fill Textbox');
@@ -285,6 +335,7 @@ $('#btnSave').on('click', function () {
     var obj = {
         action: 'insert',
         EmployeeID: Employee,
+        DeparmentID: Department,
         firstName: FirstName,
         lastName: LastName,
         userName: UserName,
@@ -319,7 +370,7 @@ $('#btnSave').on('click', function () {
                 }).then((result) => {
                     clear();
                     getTableUser();
-
+                    
                 })
              
             }

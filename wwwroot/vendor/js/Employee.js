@@ -111,7 +111,7 @@ function onSuccessGetDesignation(data, status) {
 function getTableEmployee()
 {
    
-    $('#tblEmployee').DataTable({
+    $('#tblEmployee').dataTable({
 
         "info": true,
         "processing": true,
@@ -312,8 +312,10 @@ $('#btnSave').on('click', function () {
     var EmployeeId = employeeId;
     
     if (FirstName == "") {
+        
         $('#firstName').addClass('error');
         $('#error_name').html('Please Fill Textbox');
+        $('#firstName').focus();
         return false;
     } else {
         $('#firstName').removeClass('error');

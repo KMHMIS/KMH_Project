@@ -84,6 +84,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "jQuery.Validation": {
+              "target": "Package",
+              "version": "[1.19.5, )"
             }
           },
           "imports": [

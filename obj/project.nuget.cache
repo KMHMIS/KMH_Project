@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yaKpkxijBHmnXj5O1uIBDoOzy286qNWcX0xVz6LQ8k1KoUXBNLXlmu5aIusDkuyXxby5pLQiW3dh4xTXWQB3Kw==",
+  "dgSpecHash": "HymJxyXavVwR5hDQEZg9wyTtU7enQle/sp8LT7UxpzJgotxUcmZ5+5mNffUrHqdgNjIKUrhguVBnCYzOW6kMhA==",
   "success": true,
   "projectFilePath": "D:\\KMH Projects\\KMH_Project\\KMH_Project\\KMH_Project\\KMH_Project.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,8 @@
     "C:\\Users\\MIS3\\.nuget\\packages\\crystalreports.web\\13.0.4003\\crystalreports.web.13.0.4003.nupkg.sha512",
     "C:\\Users\\MIS3\\.nuget\\packages\\fluentassertions\\6.11.0\\fluentassertions.6.11.0.nupkg.sha512",
     "C:\\Users\\MIS3\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
+    "C:\\Users\\MIS3\\.nuget\\packages\\jquery\\3.7.0\\jquery.3.7.0.nupkg.sha512",
+    "C:\\Users\\MIS3\\.nuget\\packages\\jquery.validation\\1.19.5\\jquery.validation.1.19.5.nupkg.sha512",
     "C:\\Users\\MIS3\\.nuget\\packages\\log4net\\2.0.12\\log4net.2.0.12.nupkg.sha512",
     "C:\\Users\\MIS3\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.16\\microsoft.aspnetcore.mvc.razor.extensions.6.0.16.nupkg.sha512",
     "C:\\Users\\MIS3\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\6.0.16\\microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.16.nupkg.sha512",
