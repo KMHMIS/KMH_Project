@@ -22,7 +22,6 @@ $(document).ready(function () {
     clear();
     getTableUser();
     $('#error_message').html('');
- 
 });
 
 // Get Validate
@@ -92,7 +91,7 @@ function onSuccessGetEmployee(data, status) {
    /* console.log(data);*/
 
 }
-
+    
 //Fill DropDown Department
 function getDepartment() {
 
