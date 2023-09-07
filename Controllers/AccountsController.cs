@@ -93,12 +93,12 @@ namespace KMH_Project.Controllers
         public JsonResult Session()
         {
             SessionDTO dto = new SessionDTO();
-            dto.userName = HttpContext.Session.GetString("UserName");
-            dto.roleName = HttpContext.Session.GetString("RoleName");
-            dto.employeeId = HttpContext.Session.GetString("EmployeeID");
-            dto.email = HttpContext.Session.GetString("Email");
+            dto.userName = HttpContext.Session.GetString("UserName").Trim();
+            dto.roleName = HttpContext.Session.GetString("RoleName").Trim();
+            dto.employeeId = HttpContext.Session.GetString("EmployeeID").Trim();
+            dto.email = HttpContext.Session.GetString("Email").Trim();
 
-            dto.token = HttpContext.Session.GetString("token");
+            dto.token = HttpContext.Session.GetString("token").Trim();
            
 
             return Json(dto);

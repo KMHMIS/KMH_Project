@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    
+
     <title>EMployees</title>
-   
+
     <link href="~/css/style.css" rel="stylesheet" />
     <style>
 
@@ -25,90 +25,452 @@
 <body class="theme-red">
     <section class="content">
         <div class="container-fluid">
-           
+
             <!-- Advanced Form Example With Validation -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>ADVANCED FORM EXAMPLE WITH VALIDATION</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <h2>Employee Details</h2>
+                        
                         </div>
                         <div class="body">
                             <form id="wizard_with_validation" method="POST">
-                                <h3>Account Information</h3>
+                                @*TAB ONE*@
+                                <h3>Personal Information</h3>
                                 <fieldset>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Card No</h2>
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" name="username" required>
-                                            <label class="form-label">Username*</label>
+                                            <input id="cardNo" type="text" placeholder="CardNo" class="form-control" name="cardno" required>
+                                            
                                         </div>
                                     </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Employee Name</h2>
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="password" class="form-control" name="password" id="password" required>
-                                            <label class="form-label">Password*</label>
+                                                <input id="employeeName" type="text" placeholder="EmployeeName" class="form-control" name="employeename" required>
+                                           
                                         </div>
                                     </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Department</h2>
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="password" class="form-control" name="confirm" required>
-                                            <label class="form-label">Confirm Password*</label>
+                                                <select id="Department" class="form-control mt-3" required>
+                                                   
+                                                </select>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Designation</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <select id="Designation" class="form-control mt-3" required>
+                                                  
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Shift</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <select id="Shift" class="form-control mt-3" required>
+                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  @*  <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Roster</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <select id="Roster" class="form-control mt-3" required>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Short Name</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="shortName" type="text" placeholder="ShortName" class="form-control" name="shortname" required>
+                                      
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Probation Period</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="probationPeriod" type="number" placeholder="ProbationPeriod" class="form-control" name="probationperiod" required>
+                         
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">BarCode</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="barCode" type="number" placeholder="BarCode" class="form-control" name="barcode" required>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        
+                                        <div class="form-group form-float">
+                                            
+                                                <input id="deactived" name="deactived" type="checkbox">
+                                            <label for="deactived" class="card-inside-title">Deactived</label>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+
+                                        <div class="form-group form-float">
+
+                                            <input id="permanent" name="permanent" type="checkbox">
+                                            <label for="permanent" class="card-inside-title">Permanent</label>
+
                                         </div>
                                     </div>
                                 </fieldset>
 
-                                <h3>Profile Information</h3>
+                                @*TAB TWO *@
+                                <h3>General Information</h3>
                                 <fieldset>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="text" name="name" class="form-control" required>
-                                            <label class="form-label">First Name*</label>
+                                    <div class="col-md-12">
+                                    <div class="col-sm-3">
+                                        <select id="relationName" class="form-control mt-2" required>
+                                                <option value="0">--Select Relation--</option>
+                                                <option value="1">Father Name</option>
+                                            <option value="2">Husband Name</option>
+                                        </select>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="relation" type="text" class="form-control" placeholder="Relation Name" name="relation" required>
+                                               
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="text" name="surname" class="form-control" required>
-                                            <label class="form-label">Last Name*</label>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Gender</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <select id="Gender" class="form-control mt-3" required>
+                                                        <option value="0">--Select Gender--</option>
+                                                        <option value="1">Male</option>
+                                                    <option value="2">Female</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input type="email" name="email" class="form-control" required>
-                                            <label class="form-label">Email*</label>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Mobile No</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="mobileNo" type="number" maxlength="11" placeholder="03212222222" class="form-control" name="mobileno" required>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <textarea name="address" cols="30" rows="3" class="form-control no-resize" required></textarea>
-                                            <label class="form-label">Address*</label>
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">Tel No</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="telNo" type="number" maxlength="11" placeholder="0212222222" class="form-control" name="telno">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input min="18" type="number" name="age" class="form-control" required>
-                                            <label class="form-label">Age*</label>
+                                    </div>
+                                    <div class="col-md-12">
+                                    <div class="col-sm-3">
+                                        <h2 class="card-inside-title">CNIC</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="cnic" type="number" placeholder="4230122222222" maxlength="13" class="form-control" name="cnic" required>
+                                            </div>
                                         </div>
-                                        <div class="help-info">The warning step will show up if age is less than 18</div>
+                                    </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">CNIC ExpDate</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <div class="form-line" id="bs_datepicker_container">
+                                                        <input type="text" id="cnicExpDate" class="form-control" placeholder="CNIC ExpDate...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Religion</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <select id="religion" class="form-control mt-3" required>
+                                                        <option value="0">--Select Religion--</option>
+                                                        <option value="1">Muslim</option>
+                                                        <option value="2">Non-Muslim</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Marital Status</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <select id="maritalStatus" class="form-control mt-3" required>
+                                                        <option value="0">--Select Status--</option>
+                                                        <option value="1">Married</option>
+                                                        <option value="2">UnMarried</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">IdentMark</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="identMark" type="text" placeholder="IdentMark" class="form-control" name="identmark">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Blood Group</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <select id="BloodGroup" class="form-control mt-3">
+                                                     
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Date Of Joining</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <div class="form-line" id="bs_datepicker_container">
+                                                        <input type="text" id="dateofJoining" class="form-control" placeholder="Date of Joining...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Date Of Confirm</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <div class="form-line" id="bs_datepicker_container">
+                                                        <input type="text" id="dateofConfirm" class="form-control" placeholder="Date of Confirm...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                   <div class="col-md-12">
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Date Of Birth</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <div class="form-line" id="bs_datepicker_container">
+                                                        <input type="text" id="dateofBirth" class="form-control" placeholder="Date of Birth...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Date Of Leaving</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <div class="form-line" id="bs_datepicker_container">
+                                                        <input type="text" id="dateofLeaving" class="form-control" placeholder="Date of Leaving...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <h2 class="card-inside-title">Left Reason</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="leftReason" type="text" placeholder="LeftReason" class="form-control" name="leftreason">
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-12">
+                                        <h2 class="card-inside-title">Present Address</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="presentAddtess" type="text" placeholder="PresentAddress" class="form-control" name="presentaddress">
+                                            </div>
+                                        </div>
+                                   </div>
+                                    <div class="col-md-12">
+                                        <h2 class="card-inside-title">Permanent Address</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="permanentAddress" type="text" placeholder="PermanentAddress" class="form-control" name="permanentaddress">
+                                            </div>
+                                        </div>
                                     </div>
                                 </fieldset>
 
-                                <h3>Terms & Conditions - Finish</h3>
+                                @*TAB THREE *@
+                                <h3>Salary Breakup</h3>
                                 <fieldset>
-                                    <input id="acceptTerms-2" name="acceptTerms" type="checkbox" required>
-                                    <label for="acceptTerms-2">I agree with the Terms and Conditions.</label>
+                                   <div class="col-md-12">
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">NTN</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="ntn" type="text" placeholder="NTN" class="form-control" name="ntn">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Salary</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="salary" type="number" placeholder="Salary" class="form-control" name="salary" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Income Tax</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="incomeTax" type="number" placeholder="IncomeTax" class="form-control" name="incometax">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Duty Hours</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="dutyHours" type="number" placeholder="DutyHours" class="form-control" name="dutyhours" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-12">
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Bank Name</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <select id="Bank" class="form-control mt-3" required>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">Bank Account</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="bankAccount" type="number" placeholder="BankAccount" class="form-control" name="bankaccount" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+
+                                            <div class="form-group form-float">
+
+                                                <input id="DSalTab" name="DSalTab" type="checkbox">
+                                                <label for="DSalTab" class="card-inside-title">DSalTab</label>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+
+                                            <div class="form-group form-float">
+
+                                                <input id="AppliedSassi" name="AppliedSassi" type="checkbox">
+                                                <label for="AppliedSassi" class="card-inside-title">AppliedSassi</label>
+
+                                            </div>
+                                        </div>
+                                   </div>
                                 </fieldset>
+
+                                @*TAB FOUR *@
+                                <h3>Qualification</h3>
+                                <fieldset>
+                                    <div class="col-md-12">
+                                        <h2 class="card-inside-title">Qualification</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="qualification" type="text" placeholder="Qualification" class="form-control" name="qualification" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h2 class="card-inside-title">Experience</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="experience" type="text" placeholder="Experience" class="form-control" name="experience" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h2 class="card-inside-title">Remarks</h2>
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input id="remarks" type="text" placeholder="Remarks" class="form-control" name="remarks" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+
+                                @*TAB FIVE *@
+                                <h3>Extra - Finish</h3>
+                                <fieldset>
+                                  <div class="col-md-12">
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">EOBINo</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="eobiNo" type="text" placeholder="EOBINo" class="form-control" name="EOBINo">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">EmpEOBIContribute</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="empEobiContribute" type="number" placeholder="EmpEOBIContribute" class="form-control" name="EmpEOBIContribute">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">HosptialEOBI</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="hosptialEobi" type="number" placeholder="HosptialEOBI" class="form-control" name="HosptialEOBI">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2 class="card-inside-title">KMH_Discount</h2>
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input id="kmhDiscount" type="number" placeholder="KMH_Discount" class="form-control" name="KMH_Discount">
+                                                </div>
+                                            </div>
+                                        </div>
+                                  </div>
+                                </fieldset>
+                               
+                               
                             </form>
                         </div>
                     </div>
@@ -119,13 +481,19 @@
     </section>
 
 
+ @*   <script>
+        $(document).ready(function () {
+            //Advanced form with validation
+            //Advanced form with validation
+           
+        });
 
-    <!-- Jquery Validation Plugin Css -->
-    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+     
+
+    </script>*@
 
     <!-- JQuery Steps Plugin Js -->
     <script src="~/plugins/jquery-steps/jquery.steps.js"></script>
-
-
+    <script src="~/vendor/js/employees.js"></script>
 </body>
 </html>
