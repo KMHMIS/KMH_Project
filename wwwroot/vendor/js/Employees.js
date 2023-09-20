@@ -22,7 +22,7 @@ $(document).ready(function () {
     getBank();
     getTableEmployee();
     $('#error_message').html('');
-
+    CardNo();
 
     var form = $('#wizard_with_validation').show();
     form.steps({
@@ -107,51 +107,107 @@ $(document).ready(function () {
             var EmployeeId = employeeId;
 
             var obj = {
-                action: 'insert',
-                employeeName: EmployeeName,
-                cardNo: CardNo,
-                departmentID: Department,
-                designationID: Designation,
-                bankID: Bank,
-                bankAccount: BankAccount,
-                groupID: Group,
-                shiftID: Shift,
-                relationName: RelationName,
-                relation: Relation,
-                gender: Gender,
-                mobileNo: MobileNo,
-                telNo: TelNo,
-                nic: NIC,
-                nic_ExpDate: NICExpDate,
-                address: Address,
-                dateofBirth: DateofBirth,
-                religion: Religion,
-                ntn: NTN,
-                salary: Salary,
-                dutyHours: DutyHours,
-                shortName: ShortName,
-                add1: Add1,
-                qualification: Qualification,
-                expericence: Expericence,
-                remarks: Remarks,
-                probationPeriod: ProbationPeriod,
-                identMarks: IdentMarks,
-                dateofjoining: DateofJoining,
-                dateofleaving: DateofLeaving,
-                dateofconfrim: DateofConfrim,
-                leftReason: LeftReason,
-                dSalTran: '0',
-                appliedSassi: '0',
-                eobino: EOBINo,
-                empEOBIContribute: EmpEOBIContribute,
-                hospitalEOBIContribute: HospitalEOBIContribute,
-                kmh_Discount: KMHDiscount,
-                empBarcode_id: EmpBarcodeId,
-                is_permanent: '0',
-                incometax: IncomeTax,
-                martialStatus: MartialStatus,
-                deactived: '0',
-                CreatedBy: EmployeeId
+                "action": 'insert',
+                //"employeeID": 0,
+                "employeeName": EmployeeName,
+                "cardNo": CardNo,
+                "departmentID": Department,
+                "designationID": Designation,
+                "bankID": Bank,
+                "bankAccount": BankAccount,
+                "groupID": Group,
+                "shiftID": Shift,
+                "rosterID": 0,
+                "relationName": RelationName,
+                "relation": Relation,
+                "gender": Gender,
+                "mobileNo": MobileNo,
+                "telNo": TelNo,
+                "nic": NIC,
+                "niC_ExpDate": NICExpDate,
+                "address": Address,
+                "dateOfBirth": DateofBirth,
+                "religion": Religion,
+                "ntn": NTN,
+                "salary": Salary,
+                "dutyHours": DutyHours,
+                "shortName": ShortName,
+                "add1": Add1,
+                "add2": '',
+                "qualification": Qualification,
+                "expericence": Expericence,
+                "remarks": Remarks,
+                "probationPeriod": ProbationPeriod,
+                "identMark": IdentMarks,
+                "dateOfJoining": DateofJoining,
+                "dateOfLeaving": DateofLeaving,
+                "dateOfConfirm": DateofConfrim,
+                "leftReason": LeftReason,
+                "dSalTran": 0,
+                "appliedSassi": 0,
+                "isDeleted": 0,
+                "createdBy": EmployeeId,
+                "createdIP": '',
+                "updatedBy": 0,
+                "removerBy": 0,
+                "oldCardNo": '',
+                "eobiNo": EOBINo,
+                "empeobiContribute": EmpEOBIContribute,
+                "hospitalEOBIContribute": HospitalEOBIContribute,
+                "kmH_discount": KMHDiscount,
+                "empbarcode_id": EmpBarcodeId,
+                "isPermanent": 0,
+                "incomeTax": IncomeTax,
+                "maritalStatus": MartialStatus,
+                "deactived": false
+
+                //Not working Parameter
+
+                //action: 'insert',
+                //employeeName: EmployeeName,
+                //cardNo: CardNo,
+                //departmentID: Department,
+                //designationID: Designation,
+                //bankID: Bank,
+                //bankAccount: BankAccount,
+                //groupID: Group,
+                //shiftID: Shift,
+                //relationName: RelationName,
+                //relation: Relation,
+                //gender: Gender,
+                //mobileNo: MobileNo,
+                //telNo: TelNo,
+                //nic: NIC,
+                //nic_ExpDate: NICExpDate,
+                //address: Address,
+                //dateofBirth: DateofBirth,
+                //religion: Religion,
+                //ntn: NTN,
+                //salary: Salary,
+                //dutyHours: DutyHours,
+                //shortName: ShortName,
+                //add1: Add1,
+                //qualification: Qualification,
+                //expericence: Expericence,
+                //remarks: Remarks,
+                //probationPeriod: ProbationPeriod,
+                //identMarks: IdentMarks,
+                //dateofjoining: DateofJoining,
+                //dateofleaving: DateofLeaving,
+                //dateofconfrim: DateofConfrim,
+                //leftReason: LeftReason,
+                //dSalTran: '0',
+                //appliedSassi: '0',
+                //eobino: EOBINo,
+                //empEOBIContribute: EmpEOBIContribute,
+                //hospitalEOBIContribute: HospitalEOBIContribute,
+                //kmh_Discount: KMHDiscount,
+                //empBarcode_id: EmpBarcodeId,
+                //is_permanent: '0',
+                //incometax: IncomeTax,
+                //martialStatus: MartialStatus,
+                //deactived: '0',
+                //CreatedBy: EmployeeId
             };
             console.log(obj);
             $.ajax({
@@ -176,7 +232,7 @@ $(document).ready(function () {
                                 clearInterval(timerInterval)
                             }
                         }).then((result) => {
-                            //clear();
+                            clear();
                             //getTableEmployee();
                             //$("#divInput").hide();
 
@@ -208,6 +264,12 @@ $(document).ready(function () {
     });
 
 });
+
+function CardNo() {
+    var num = +$("#cardNo").val() + 1;
+    $("#cardNo").val(num);
+}
+
 
 // Function Button Waves Effect
 function setButtonWavesEffect(event) {
@@ -502,22 +564,49 @@ $(document).on("click", ".btnDelete", function () {
  
 //All Input Clear
 function clear() {
-    $("#firstName").val("");
-    $("#lastName").val("");
-    $("#joiningDate").val("");
-    $("#relievingDate").val("");
-    $("#dateOfBirth").val("");
+    $("#employeeName").val("");
+    $("#cardNo").val("");
+    $("#bankAccount").val("");
+    $("#relationName").val("");
+    $("#relation").val("");
+    $("#Gender").val("");
+    $("#mobileNo").val("");
+    $("#telNo").val("");
+    $("#cnic").val("");
+    $("#cnicExpDate").val("");
+    $("#presentAddtess").val("");
+    $("#dateofBirth").val("");
+    $("#religion").val("");
+    $("#ntn").val("");
     $("#salary").val("");
-    $("#emailAddress").val("");
-    $("#phoneNo1").val("");
-    $("#phoneNo2").val("");
-    $("#lastCompanyName").val("");
-    $("#address").val("");
+    $("#dutyHours").val("");
+    $("#shortName").val("");
+    $("#permanentAddress").val("");
+    $("#qualification").val("");
+    $("#experience").val("");
+    $("#remarks").val("");
+    $("#probationPeriod").val("");
+    $("#identMark").val("");
+    $("#dateofJoining").val("");
+    $("#dateofLeaving").val("");
+    $("#dateofConfirm").val("");
+    $("#leftReason").val("");
+    $("#eobiNo").val("");
+    $("#empEobiContribute").val("");
+    $("#hosptialEobi").val("");
+    $("#kmhDiscount").val("");
+    $("#barCode").val("");
+    $("#incomeTax").val("");
+    $("#maritalStatus").val("");
     $('#error_message').html('');
     getDeparment();
     getDesignation();
-    $("#btnSave").show();
-    $("#btnUpdate").hide();
+    getShift();
+    getBank();
+    getBloodGroup();
+
+    //$("#btnSave").show();
+    //$("#btnUpdate").hide();
 }
 
 //Click Clear Button
